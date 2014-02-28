@@ -15,6 +15,7 @@ def make_app(global_config, **settings):
         from poulda.models import initialize_db
         initialize_db(settings['poulda.db_url'])
     config = Configurator(settings=settings)
+    config.include('pyramid_chameleon')
 
     # Authentication and authorization policies
     auth_policy = AuthTktAuthenticationPolicy(settings['poulda.secret'])
