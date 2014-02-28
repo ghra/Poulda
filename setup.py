@@ -9,7 +9,8 @@ CHANGES = open(os.path.join(here, 'CHANGES.rst')).read()
 LONG_DESCRIPTION = README + '\n\n' + CHANGES
 
 requires = ('pyramid',
-            'pyramid_tm')
+            'pyramid_tm',
+            'pyramid_chameleon')
 extras_require = {'db': ('sqlalchemy',
                          'zope.sqlalchemy')}
 
