@@ -22,7 +22,7 @@ def get_file_from_request(request):
     filename of the file.
     """
     file_size = int(request.headers['Content-Length'])
-    input_file = request['wsgi.input']
+    input_file = request.body_file_raw #['wsgi.input']
     line = input_file.readline()  # First MIME type boundary (file_id)
     file_size -= len(line)
     line = input_file.readline()  # Headers
