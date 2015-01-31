@@ -1,5 +1,6 @@
 var done = false;
 var start = undefined; // will be set by 'init_upload_form()'
+var form_is_hidden = false;
 
 var time_to_str_units = [[3600, 'h'], [60, 'm'], [1, 's']];
 function time_to_str(t) {
@@ -64,6 +65,11 @@ function refresh_progress_bar() {
     if (!done) {
         var file_id = document.getElementById("file_id").value;
         $.getJSON("progress?X-Progress-ID=" + file_id, callback);
+    }
+    if (!form_is_hidden) {
+        document.getElementById("input_file").disabled = true;
+        document.getElementById("input_submit").disabled = true;
+        form_is_hidden = true;
     }
 }
 

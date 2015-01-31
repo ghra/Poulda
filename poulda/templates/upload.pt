@@ -14,10 +14,10 @@
     <input type="hidden" id="file_id" name="file_id"
            tal:attributes="value file_id"/>
     <div class="formRow">
-      <input type="file" name="file"/>
+      <input type="file" name="file" id="input_file"/>
     </div>
     <div class="formRow">
-      <input type="submit" i18n:attributes="value" value="Upload"/>
+      <input type="submit" i18n:attributes="value" value="Upload" id="input_submit"/>
     </div>
   </form>
 
